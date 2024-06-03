@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,8 +22,8 @@
         h1 {
             text-align: center;
             font-size: 3em;
-            color: pink;
-            margin-top: 20px;
+            color: green;
+            margin-top: 30px;
             position: relative;
             z-index: 1;
         }
