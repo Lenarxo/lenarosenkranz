@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            font-family: Arial, sans-serif;
+            font-family: basteleur, bold;
             background: url('Topf 2024-06-03 06_49_08.jpg') no-repeat center center fixed;
             background-size: cover;
             display: flex;
