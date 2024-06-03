@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lena Rosenkranz</title>
+  <script type="module" src="Kaktus.glb"></script>
+  
+  <style>
+ 
+
+    body {
+      background-image: url('Topf 28.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      color: DarkOliveGreen;
+      text-align: center;
+      font-family: 'Arial Black', sans-serif;
+      font-size: 24px;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+	
+    #model-viewer-container {
+            width: 100%;
+            max-width: 700px;
+            margin-left: 50%;
+            display: flex;
+        }
+        model-viewer {
+            width: 400px;
+            height: 400px;
+            margin-left: -260px;
+            padding-top: 140px;
+            padding-left: 140px;
+            
+        }
+ 
+		  model-viewer {
+                align-items: center;
+                height: 45vh;
+                position: center;
+                padding-top: 0px;
+                background-color: #696a6a;
+                background-image: url(img/mobile-layout.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position-x: 100px;
+            }
+    
+           
+  </style>
+</head>
+<body>
+
+
+  <div id="model-viewer-container"> 
+      <model-viewer-id="ar-model" src="Kaktus.glb" alt="3D model" 70vh;" ar ar-modes="webxr scene-viewer quick-look" camera-controls auto-rotate></model-viewer>
+    
+  </div>
+
+  
+  <div class="ar-button-overlay" onclick="document.getElementById('model-viewer').activateAR()"></div>
+
+  <script>
+    async function checkARCoreCompatibility() {
+      const modelViewer = document.getElementById('model-viewer');
+      const isARCoreSupported = await navigator.xr.isSessionSupported('immersive-ar');
+      if (!isARCoreSupported) {
+        modelViewer.removeAttribute('ar');
+        modelViewer.removeAttribute('ar-modes');
+        alert('Your device is not compatible with AR features. You can still view the 3D model.');
+      }
+    }
+    document.addEventListener('DOMContentLoaded', checkARCoreCompatibility);
+	
+
+       
+  </script>
+</body>
+</html>
