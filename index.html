@@ -4,11 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lena Rosenkranz</title>
-  <script type="module" src="test-1.glb"></script>
-  
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
- 
-
     body {
       background-image: url('Topf 28.png');
       background-size: cover;
@@ -28,44 +25,42 @@
     }
 
     model-viewer {
-            width: 100%; /* 100% of the parent's width */
-            height: 80vh; /* 80% of the viewport height */
-            display: block;
-            margin: auto;
-           
+      width: 100%;
+      height: 80vh;
+      display: block;
+      margin: auto;
+    }
   </style>
 </head>
 <body>
-<model-viewer 
-                id="model-viewer"
-                src="test-1.glb"
-                ios-src="test-1.usdz"
-                alt="Plant Viewer"
-                ar
-                ar-modes="webxr scene-viewer quick-look" 
-                environment-image="neutral" 
-                auto-rotate
-                camera-controls
-                animation-name="CubeAction" 
-                animation-loop>  
+  <model-viewer 
+    id="model-viewer"
+    src="Kaktus.glb"
+    ios-src="Kaktus.usdz"
+    alt="Plant Viewer"
+    ar
+    ar-modes="webxr scene-viewer quick-look" 
+    environment-image="neutral" 
+    auto-rotate
+    camera-controls
+    animation-name="CubeAction" 
+    animation-loop>
   </model-viewer>
 
-
-  
-  <div class="ar-button-overlay" onclick="document.getElementById('model-viewer').activateAR()"></div>
-
-<script>
-        async function checkARCoreCompatibility() {
-            const modelViewer = document.getElementById('model-viewer');
-            const isARCoreSupported = await navigator.xr.isSessionSupported('immersive-ar');
-            if (!isARCoreSupported) {
-                modelViewer.removeAttribute('ar');
-                modelViewer.removeAttribute('ar-modes');
-                alert('Your device is not compatible with AR features. You can still view the 3D model.');
-            }
+  <script>
+    async function checkARCoreCompatibility() {
+      const modelViewer = document.getElementById('model-viewer');
+      if (navigator.xr) {
+        const isARCoreSupported = await navigator.xr.isSessionSupported('immersive-ar');
+        if (!isARCoreSupported) {
+          modelViewer.removeAttribute('ar');
+          modelViewer.removeAttribute('ar-modes');
+          alert('Your device is not compatible with AR features. You can still view the 3D model.');
         }
+      }
+    }
 
-        document.addEventListener('DOMContentLoaded', checkARCoreCompatibility);
-    </script>d
+    document.addEventListener('DOMContentLoaded', checkARCoreCompatibility);
+  </script>
 </body>
 </html>
