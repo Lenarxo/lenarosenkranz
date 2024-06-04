@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lena Rosenkranz</title>
-  <script type="module" src="Kaktus.glb"></script>
+  <script type="module" src="test-1.glb"></script>
   
   <style>
  
@@ -38,8 +38,8 @@
 <body>
 <model-viewer 
                 id="model-viewer"
-                src="Kaktus.glb"
-                ios-src="Kaktus.usdz"
+                src="test-1.glb"
+                ios-src="test-1.usdz"
                 alt="Plant Viewer"
                 ar
                 ar-modes="webxr scene-viewer quick-look" 
@@ -49,10 +49,7 @@
                 animation-name="CubeAction" 
                 animation-loop>  
   </model-viewer>
-  <div id="model-viewer-container"> 
-      <model-viewer-id="ar-model" src="Kaktus.glb" alt="3D model" 70vh;" ar ar-modes="webxr scene-viewer quick-look" camera-controls auto-rotate></model-viewer>
-    
-  </div>
+
 
   
   <div class="ar-button-overlay" onclick="document.getElementById('model-viewer').activateAR()"></div>
@@ -69,6 +66,6 @@
         }
 
         document.addEventListener('DOMContentLoaded', checkARCoreCompatibility);
-    </script>
+    </script>d
 </body>
 </html>
