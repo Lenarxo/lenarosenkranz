@@ -26,47 +26,29 @@
       flex-direction: column;
       justify-content: center;
     }
-	
-    #model-viewer-container {
-            width: 100%;
-            max-width: 700px;
-            margin-left: 50%;
-            display: flex;
-        }
-        model-viewer {
-            width: 400px;
-            height: 400px;
-            margin-left: -260px;
-            padding-top: 140px;
-            padding-left: 140px;
-            
-        }
- 
-		  model-viewer {
-                align-items: center;
-                height: 45vh;
-                position: center;
-                padding-top: 0px;
-                background-color: #696a6a;
-                background-image: url(img/mobile-layout.png);
-                background-repeat: no-repeat;
-                background-size: contain;
-                background-position-x: 100px;
-            }
-    
+
+    model-viewer {
+            width: 100%; /* 100% of the parent's width */
+            height: 80vh; /* 80% of the viewport height */
+            display: block;
+            margin: auto;
            
   </style>
 </head>
 <body>
-
-	<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
-	<model-viewer 
-	  src="https://github.com/Lenarxo/lenarosenkranz/blob/main/Kaktus.glb" 
-	  auto-rotate
-	  alt="boat">
-	</model-viewer>
-
+<model-viewer 
+                id="model-viewer"
+                src="Kaktus.glb"
+                ios-src="Kaktus.usdz"
+                alt="Plant Viewer"
+                ar
+                ar-modes="webxr scene-viewer quick-look" 
+                environment-image="neutral" 
+                auto-rotate
+                camera-controls
+                animation-name="CubeAction" 
+                animation-loop>  
+  </model-viewer>
   <div id="model-viewer-container"> 
       <model-viewer-id="ar-model" src="Kaktus.glb" alt="3D model" 70vh;" ar ar-modes="webxr scene-viewer quick-look" camera-controls auto-rotate></model-viewer>
     
@@ -75,20 +57,18 @@
   
   <div class="ar-button-overlay" onclick="document.getElementById('model-viewer').activateAR()"></div>
 
-  <script>
-    async function checkARCoreCompatibility() {
-      const modelViewer = document.getElementById('model-viewer');
-      const isARCoreSupported = await navigator.xr.isSessionSupported('immersive-ar');
-      if (!isARCoreSupported) {
-        modelViewer.removeAttribute('ar');
-        modelViewer.removeAttribute('ar-modes');
-        alert('Your device is not compatible with AR features. You can still view the 3D model.');
-      }
-    }
-    document.addEventListener('DOMContentLoaded', checkARCoreCompatibility);
-	
+<script>
+        async function checkARCoreCompatibility() {
+            const modelViewer = document.getElementById('model-viewer');
+            const isARCoreSupported = await navigator.xr.isSessionSupported('immersive-ar');
+            if (!isARCoreSupported) {
+                modelViewer.removeAttribute('ar');
+                modelViewer.removeAttribute('ar-modes');
+                alert('Your device is not compatible with AR features. You can still view the 3D model.');
+            }
+        }
 
-       
-  </script>
+        document.addEventListener('DOMContentLoaded', checkARCoreCompatibility);
+    </script>
 </body>
 </html>
