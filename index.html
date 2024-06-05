@@ -28,7 +28,21 @@
       margin: 0;
       padding: 0;
     }
+ .leaf {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: pink;
+            opacity: 0.8;
+            border-radius: 50%;
+            animation: fall linear infinite;
+        }
 
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
    
 
     model-viewer {
@@ -48,20 +62,7 @@
   </style>
 </head>
 <body>
-leaf {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background: pink;
-            opacity: 0.8;
-            border-radius: 50%;
-            animation: fall linear infinite;
-        }
 
-        @keyframes fall {
-            to {
-                transform: translateY(100vh) rotate(360deg);
-            }
   <model-viewer 
     id="model-viewer"
     src="Kaktus.glb"
@@ -77,7 +78,7 @@ leaf {
   </model-viewer>
   <div class="info-text">Don't be shy and look around in Lenas Plantshop. We got the new Magical Rainbow Cactus of your dreams!</div>
 
-  <script>
+    <script>
         // Function to create falling leaves
         function createLeaf() {
             const leaf = document.createElement('div');
@@ -100,6 +101,7 @@ leaf {
         // Continuously create new leaves
         setInterval(createLeaf, 1000);
     </script>
+
 
   <script>
     async function checkARCoreCompatibility() {
