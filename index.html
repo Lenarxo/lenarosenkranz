@@ -6,8 +6,15 @@
   <title>Lena Rosenkranz</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
+    @font-face {
+      font-family: 'Streetwear';
+      src: url('fonts/Streetwear.woff2') format('woff2'),
+           url('fonts/Streetwear.woff') format('woff'),
+           url('fonts/Streetwear.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
 
-    
     body {
       background-image: url('Topf 28.png');
       background-size: cover;
@@ -26,7 +33,16 @@
       justify-content: center;
     }
 
-   
+    header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      text-align: center;
+      font-family: 'Streetwear', sans-serif;
+      font-size: 36px;
+      padding: 20px 0;
+      background: rgba(255, 255, 255, 0.7);
+    }
 
     model-viewer {
       width: 100%;
@@ -34,10 +50,17 @@
       display: block;
       margin: auto;
     }
+
+    .info-text {
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      color: DarkOliveGreen;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
-  
+  <header>Lenas Plantshop</header>
   <model-viewer 
     id="model-viewer"
     src="Kaktus.glb"
@@ -51,6 +74,7 @@
     animation-name="CubeAction" 
     animation-loop>
   </model-viewer>
+  <div class="info-text">Don't be shy and look around in Lenas Plantshop. We got the new Magical Rainbow Cactus of your dreams!</div>
 
   <script>
     async function checkARCoreCompatibility() {
