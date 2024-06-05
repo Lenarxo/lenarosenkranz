@@ -5,8 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lena Rosenkranz</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Basteleur&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: 'Basteleur';
+      src: url('fonts/Basteleur.ttf') format('truetype');
+    }
+
     body {
       background-image: url('Topf 28.png');
       background-size: cover;
@@ -30,10 +34,10 @@
       top: 0;
       width: 100%;
       text-align: center;
-      font-family: 'Streetwear', Regular;
-      font-size: 70px;
+      font-family: 'Basteleur', sans-serif;
+      font-size: 36px;
       padding: 20px 0;
-      
+      background: rgba(255, 255, 255, 0.7);
     }
 
     model-viewer {
