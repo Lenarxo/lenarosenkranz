@@ -28,21 +28,7 @@
       margin: 0;
       padding: 0;
     }
- .leaf {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background: pink;
-            opacity: 0.8;
-            border-radius: 50%;
-            animation: fall linear infinite;
-        }
 
-        @keyframes fall {
-            to {
-                transform: translateY(100vh) rotate(360deg);
-            }
-        }
    
 
     model-viewer {
@@ -78,30 +64,7 @@
   </model-viewer>
   <div class="info-text">Don't be shy and look around in Lenas Plantshop. We got the new Magical Rainbow Cactus of your dreams!</div>
 
-    <script>
-        // Function to create falling leaves
-        function createLeaf() {
-            const leaf = document.createElement('div');
-            leaf.classList.add('leaf');
-            leaf.style.left = Math.random() * 100 + 'vw';
-            leaf.style.animationDuration = Math.random() * 3 + 2 + 's';
-            leaf.style.animationDelay = Math.random() * 5 + 's';
-            document.body.appendChild(leaf);
-
-            setTimeout(() => {
-                leaf.remove();
-            }, 7000); // Remove leaf after animation
-        }
-
-        // Create multiple leaves
-        for (let i = 0; i < 20; i++) {
-            createLeaf();
-        }
-
-        // Continuously create new leaves
-        setInterval(createLeaf, 1000);
-    </script>
-
+   
 
   <script>
     async function checkARCoreCompatibility() {
