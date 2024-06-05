@@ -8,7 +8,7 @@
   <style>
     @font-face {
       font-family: 'Streetwear';
-      src: url('fonts/Streetwear.woff2') format('woff2'),
+      src: url('fonts/Streetwear.otf') format('otf'),
            url('fonts/Streetwear.woff') format('woff'),
            url('fonts/Streetwear.ttf') format('truetype');
       font-weight: normal;
@@ -27,22 +27,9 @@
       font-size: 24px;
       margin: 0;
       padding: 0;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
     }
 
-    header {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      text-align: center;
-      font-family: 'Streetwear', sans-serif;
-      font-size: 36px;
-      padding: 20px 0;
-      background: rgba(255, 255, 255, 0.7);
-    }
+   
 
     model-viewer {
       width: 100%;
@@ -52,10 +39,11 @@
     }
 
     .info-text {
-      font-size: 16px;
-      font-family: Arial, sans-serif;
+      font-size: 50px;
+      font-family: Streetwear, regular;
       color: DarkOliveGreen;
       margin-top: 20px;
+      padding: 20px;
     }
   </style>
 </head>
@@ -83,7 +71,7 @@
         const isARCoreSupported = await navigator.xr.isSessionSupported('immersive-ar');
         if (!isARCoreSupported) {
           modelViewer.removeAttribute('ar');
-          modelViewer.removeAttribute('ar-modes');
+          modelViewer removeAttribute('ar-modes');
           alert('Your device is not compatible with AR features. You can still view the 3D model.');
         }
       }
