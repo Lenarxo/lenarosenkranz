@@ -6,10 +6,13 @@
   <title>Lena Rosenkranz</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <link rel="stylesheet" href="https://gitlab.com/velvetyne/basteleur/-/raw/main/Basteleur-Regular.woff2">
+
   <style>
     @font-face {
       font-family: 'Basteleur';
-      src: url('https://gitlab.com/velvetyne/basteleur/-/raw/main/Basteleur-Regular.woff2') format('woff2');
+      src: url('https://gitlab.com/velvetyne/basteleur/-/raw/main/Basteleur-Regular.woff2') format('woff2'),
+           url('https://gitlab.com/velvetyne/basteleur/-/raw/main/Basteleur-Regular.woff') format('woff'),
+           url('https://gitlab.com/velvetyne/basteleur/-/raw/main/Basteleur-Regular.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
     }
@@ -22,6 +25,7 @@
       background-position: top;
       margin: 0;
       padding: 0;
+      font-family: 'Basteleur', sans-serif;
     }
 
     model-viewer {
