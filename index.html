@@ -5,18 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lena Rosenkranz</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <link rel="stylesheet" href="https://gitlab.com/velvetyne/basteleur/-/raw/main/Basteleur-Regular.woff2">
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Link to the Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 
   <style>
-    @font-face {
-      font-family: 'Basteleur';
-      src: url('https://gitlab.com/velvetyne/basteleur/-/raw/main/Basteleur-Regular.woff2') format('woff2'),
-           url('https://gitlab.com/velvetyne/basteleur/-/raw/main/Basteleur-Regular.woff') format('woff'),
-           url('https://gitlab.com/velvetyne/basteleur/-/raw/main/Basteleur-Regular.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
-
     body {
       background-image: url('Topf 28.png');
       background-size: cover;
@@ -25,7 +21,7 @@
       background-position: top;
       margin: 0;
       padding: 0;
-      font-family: 'Basteleur', sans-serif;
+      font-family: 'Spline Sans Mono', monospace;
     }
 
     model-viewer {
@@ -43,7 +39,7 @@
     }
 
     .info-text {
-      font-family: 'Basteleur', bold;
+      font-family: 'Spline Sans Mono', monospace;
       font-size: 20px;
       color: #406331;
       margin-top: 20px;
