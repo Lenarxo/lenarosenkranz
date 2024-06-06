@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lena Rosenkranz</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <link rel="stylesheet"
-          href="https://gitlab.com/velvetyne/basteleur.git">
-
-    <style>
-
+  <link rel="stylesheet" href="https://gitlab.com/velvetyne/basteleur/-/raw/main/Basteleur-Regular.woff2">
+  <style>
+    @font-face {
+      font-family: 'Basteleur';
+      src: url('https://gitlab.com/velvetyne/basteleur/-/raw/main/Basteleur-Regular.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
 
     body {
       background-image: url('Topf 28.png');
@@ -21,54 +24,54 @@
       padding: 0;
     }
 
-
     model-viewer {
       width: 80%;
       height: 100vh;
       display: block;
       margin: auto;
     }
-      
-      
+
     .info-container {
       display: flex;
       justify-content: center;
       align-items: center;
       margin-top: 20px;
     }
-      
+
     .info-text {
       font-family: 'Basteleur', bold;
       font-size: 20px;
       color: #406331;
       margin-top: 20px;
-      background-color: rgba(226, 170, 227, 0.7); /* Pink with transparency */
+      background-color: rgba(226, 170, 227, 0.7);
       padding: 20px;
       border-radius: 10px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-
   <model-viewer 
     id="model-viewer"
     src="Kaktus.glb"
     ios-src="Kaktus.usdz"
     alt="Plant Viewer"
     ar
-    ar-modes="webxr scene-viewer quick-look" 
-    environment-image="neutral" 
+    ar-modes="webxr scene-viewer quick-look"
+    environment-image="neutral"
     auto-rotate
     camera-controls
-    animation-name="CubeAction" 
+    animation-name="CubeAction"
     animation-loop>
   </model-viewer>
-  <div class="info-text">Don't be shy and look around in Lenas Plantshop. We got the new Magical Rainbow Cactus you've all been waiting for! For some it's a new haircut, for us it's buying plants thats opening up a new Chapter in Life. Or strenghen the ties of the Path you're going hihi.
-  Don't think twice and become a Plant Mom of this little delight today! <3
-  
-  for more, come by and say</div>
-
-   
+  <div class="info-container">
+    <div class="info-text" aria-label="Information about the Magical Rainbow Cactus">
+      Don't be shy and look around in Lena's Plantshop. We got the new Magical Rainbow Cactus you've all been waiting for! 
+      For some it's a new haircut, for us it's buying plants that's opening up a new Chapter in Life. Or strengthen the ties of the Path you're going hihi.
+      Don't think twice and become a Plant Mom of this little delight today! <3 
+      For more, come by and say hi!
+    </div>
+  </div>
 
   <script>
     async function checkARCoreCompatibility() {
@@ -77,7 +80,7 @@
         const isARCoreSupported = await navigator.xr.isSessionSupported('immersive-ar');
         if (!isARCoreSupported) {
           modelViewer.removeAttribute('ar');
-          modelViewer removeAttribute('ar-modes');
+          modelViewer.removeAttribute('ar-modes');
           alert('Your device is not compatible with AR features. You can still view the 3D model.');
         }
       }
